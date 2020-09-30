@@ -100,7 +100,7 @@
 		animate();
 		</code>
 
-		<p>This will create a loop that causes the renderer to draw the scene every time the screen is refreshed (on a typical screen this means 60 times per second). If you're new to writing games in the browser, you might say <em>"why don't we just create a setInterval ?"</em> The thing is - we could, but <strong>requestAnimationFrame</strong> has a number of advantages. Perhaps the most important one is that it pauses when the user navigates to another browser tab, hence not wasting their precious processing power and battery life.</p>
+		<p>This will create a loop that causes the renderer to draw the scene every time the screen is refreshed (on a typical screen this means 60 times per second). If you're new to writing games in the browser, you might say <em>"why don't we just create a setInterval ?"</em> We could, but here's the issue: <strong>requestAnimationFrame</strong> uses about 10% of a modern gpu, whereas setInterval uses about 9% of a modern CPU, so pick your poison and choose the one that you would rather use more resources from. The GPU probably uses more energy than a CPU on average since it's usually larger and usually requires a larger fan. They both stop using CPU/GPU power when the user changes tabs, closes or minimizes the browser window. The setInterval timer function is slightly more advanced to know how to use, but it can be used to set or change a frame rate quickly/easily.</p>
 
 		<h2>Animating the cube</h2>
 
